@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>May Car Automotive</title>
+    <!-- Favicon -->
+    <link rel="icon" href="/images/mycar-favicon.png" type="Favicon">
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+
+<body>
+    <!-- Top Header Start -->
+    <div class="top-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link">𝕏</a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="language-switcher">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="languageDropdown"
+                                data-bs-toggle="dropdown">
+                                <img src="https://flagcdn.com/w20/gb.png" alt="EN" class="flag-icon"> EN
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#"><img src="https://flagcdn.com/w20/de.png" alt="DE"
+                                            class="flag-icon"> DE</a></li>
+                                <li><a class="dropdown-item" href="#"><img src="https://flagcdn.com/w20/tr.png" alt="TR"
+                                            class="flag-icon"> TR</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top Header End -->
+
+    <!-- Main Header Start -->
+    <header class="main-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-2 col-md-3 col-6">
+                    <div class="logo">
+                        <a href="index.html"><img src="/images/renkli-logo.png" alt="Logo" class="img-fluid"></a>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-md-9 col-6 d-none d-md-flex justify-content-end">
+                    <nav class="main-nav">
+                        <ul class="nav-menu">
+                            <li class="nav-item search-item">
+                                <div class="search-bar">
+                                    <form class="search-form">
+                                        <div class="search-wrapper">
+                                            <input type="text" class="form-control" placeholder="Search products...">
+                                            <i class="fas fa-search search-icon"
+                                                onclick="document.querySelector('.search-form').submit()"></i>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a href="#" class="nav-link">All Products</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">News</a></li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link login-link">
+                                    <i class="fas fa-user me-1"></i>
+                                    Log in</a>
+                            </li>
+                            <li class="nav-item cart-item">
+                                <a href="#" class="cart-link">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span class="cart-total">0,00 €</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="mobile-menu-toggle d-md-none">
+                        <button class="btn" id="mobileMenuBtn">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Header End -->
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="sidebar-header">
+            <h5>Menu</h5>
+            <button class="btn-close" id="closeSidebar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="sidebar-content">
+            <div class="mobile-search">
+                <form class="search-form">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search products...">
+                        <button class="btn btn-search" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="mobile-login">
+                <a href="#" class="btn btn-primary w-100">Log in</a>
+            </div>
+            <div class="mobile-social">
+                <h6>Follow Us</h6>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link">𝕏</a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Slider Start -->
+    <section class="video-slider">
+        <div class="container">
+            <div class="video-container">
+                <video autoplay muted loop>
+                    <source src="/videos/mycar-slider-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+    <!-- Slider End -->
+
+    <!-- Product Filter Start -->
+    <section class="product-filter">
+        <div class="container">
+            <div class="filter-container">
+                <div class="filter-row">
+                    <div class="filter-item">
+                        <select id="brandSelect" class="filter-select">
+                            <option value="">Select Brand</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <select id="modelSelect" class="filter-select" disabled>
+                            <option value="">Select Model</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <select id="versionSelect" class="filter-select" disabled>
+                            <option value="">Select Version</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <select id="generationSelect" class="filter-select" disabled>
+                            <option value="">Select Generation</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <select id="typeSelect" class="filter-select" disabled>
+                            <option value="">Select Type</option>
+                        </select>
+                    </div>
+                    <div class="filter-actions">
+                        <button type="button" class="btn-clear" id="clearFilter">
+                            <i class="fas fa-times"></i> Clear
+                        </button>
+                        <button type="button" class="btn-search" id="searchFilter">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Filter End -->
+
+    <!-- New Products Start -->
+    <section class="new-products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">New Products</h2>
+                <p class="section-subtitle">Discover our latest automotive products</p>
+            </div>
+            <div class="products-slider-container">
+                <div class="slider-wrapper">
+                    <div class="products-slider" id="productsSlider">
+                        <!-- Products will be dynamically added here -->
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev-btn" id="prevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn next-btn" id="nextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- New Products End -->
+
+    <!-- Most Selling Products Start -->
+    <section class="most-selling-products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Most Selling Products This Month</h2>
+                <p class="section-subtitle">Discover our best-selling automotive products</p>
+            </div>
+            <div class="products-slider-container">
+                <div class="slider-wrapper">
+                    <div class="products-slider" id="mostSellingSlider">
+                        <!-- Products will be dynamically added here -->
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev-btn" id="mostSellingPrevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn next-btn" id="mostSellingNextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Most Selling Products End -->
+
+    <!-- How are our products made? Start -->
+    <section class="how-products-made">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How are our products made?</h2>
+                <p class="section-subtitle">Discover our manufacturing process</p>
+            </div>
+            <div class="process-container">
+                <div class="process-content">
+                    <div class="process-steps">
+                        <div class="step-item active" data-step="1">
+                            <div class="step-number">01</div>
+                            <div class="step-content">
+                                <h3 class="step-title">Design & Planning</h3>
+                                <p class="step-description">Our expert engineers create detailed blueprints and 3D
+                                    models using cutting-edge CAD software to ensure precision and quality.</p>
+                            </div>
+                        </div>
+                        <div class="step-item" data-step="2">
+                            <div class="step-number">02</div>
+                            <div class="step-content">
+                                <h3 class="step-title">Material Selection</h3>
+                                <p class="step-description">We carefully select premium materials and components from
+                                    trusted suppliers to guarantee durability and performance.</p>
+                            </div>
+                        </div>
+                        <div class="step-item" data-step="3">
+                            <div class="step-number">03</div>
+                            <div class="step-content">
+                                <h3 class="step-title">Manufacturing</h3>
+                                <p class="step-description">Our state-of-the-art production facilities use advanced
+                                    machinery and skilled craftsmen to create each component.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="process-visual">
+                    <div class="visual-container">
+                        <div class="visual-item active" data-visual="1">
+                            <img src="/images/car-being-taking-care-workshop.jpg" alt="Design & Planning Process"
+                                class="process-image">
+                        </div>
+                        <div class="visual-item" data-visual="2">
+                            <img src="/images/car-detailing-concept-man-face-mask-with-orbital-polisher-repair-shop-polishing-roof-orange-suv-car.jpg"
+                                alt="Material Selection Process" class="process-image">
+                        </div>
+                        <div class="visual-item" data-visual="3">
+                            <img src="/images/full-shot-man-wrapping-car.jpg" alt="Manufacturing Process"
+                                class="process-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- How are our products made? End -->
+
+
+    <script src="js/script.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/product-filter.js"></script>
+    <script src="js/new-product.js"></script>
+    <script src="js/how-products-made.js"></script>
+    <script src="js/most-sell-pr.js"></script>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
