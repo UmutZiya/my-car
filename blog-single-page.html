@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>May Car Automotive</title>
+    <!-- Favicon -->
+    <link rel="icon" href="/images/mycar-favicon.png" type="Favicon">
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/blog-single-page.css">
+</head>
+
+<body>
+    <!-- Top Header Start -->
+    <div class="top-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link">𝕏</a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="language-switcher">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="languageDropdown"
+                                data-bs-toggle="dropdown">
+                                <img src="https://flagcdn.com/w20/gb.png" alt="EN" class="flag-icon"> EN
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#"><img src="https://flagcdn.com/w20/de.png" alt="DE"
+                                            class="flag-icon"> DE</a></li>
+                                <li><a class="dropdown-item" href="#"><img src="https://flagcdn.com/w20/tr.png" alt="TR"
+                                            class="flag-icon"> TR</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top Header End -->
+
+    <!-- Main Header Start -->
+    <header class="main-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-2 col-md-3 col-6">
+                    <div class="logo">
+                        <a href="index.html"><img src="/images/renkli-logo.png" alt="Logo" class="img-fluid"></a>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-md-9 col-6 d-none d-md-flex justify-content-end">
+                    <nav class="main-nav">
+                        <ul class="nav-menu">
+                            <li class="nav-item search-item">
+                                <div class="search-bar">
+                                    <form class="search-form">
+                                        <div class="search-wrapper">
+                                            <input type="text" class="form-control" placeholder="Search products...">
+                                            <i class="fas fa-search search-icon"
+                                                onclick="document.querySelector('.search-form').submit()"></i>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a href="#" class="nav-link">All Products</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">News</a></li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link login-link">
+                                    <i class="fas fa-user me-1"></i>
+                                    Log in</a>
+                            </li>
+                            <li class="nav-item cart-item">
+                                <a href="#" class="cart-link">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span class="cart-total">0,00 €</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="mobile-menu-toggle d-md-none">
+                        <button class="btn" id="mobileMenuBtn">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Header End -->
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="sidebar-header">
+            <h5>Menu</h5>
+            <button class="btn-close" id="closeSidebar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="sidebar-content">
+            <div class="mobile-search">
+                <form class="search-form">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search products...">
+                        <button class="btn btn-search" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="mobile-login">
+                <a href="#" class="btn btn-primary w-100">Log in</a>
+            </div>
+            <div class="mobile-social">
+                <h6>Follow Us</h6>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link">𝕏</a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Blog section Start -->
+    <section class="blog-hero">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">News</a></li>
+                    <li class="breadcrumb-item active">Latest Automotive Technology Trends</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <section class="blog-content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <article class="blog-article">
+                        <div class="article-header">
+                            <h1 class="article-title">Latest Automotive Technology Trends</h1>
+                            <div class="article-meta">
+                                <span class="meta-item">
+                                    <i class="fas fa-calendar"></i>
+                                    December 15, 2024
+                                </span>
+                                <span class="meta-item">
+                                    <i class="fas fa-user"></i>
+                                    By Admin
+                                </span>
+                                <span class="meta-item">
+                                    <i class="fas fa-tag"></i>
+                                    Technology
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="article-image">
+                            <img src="/images/car-being-taking-care-workshop.jpg" alt="Latest Automotive Technology Trends" class="img-fluid">
+                        </div>
+                        
+                        <div class="article-content">
+                            <p class="lead">The automotive industry is experiencing a revolutionary transformation with cutting-edge technologies that are reshaping how we think about transportation, safety, and environmental sustainability.</p>
+                            
+                            <p>Electric vehicles (EVs) have moved from niche products to mainstream alternatives, with major manufacturers investing billions in battery technology and charging infrastructure. The latest developments in lithium-ion batteries are extending range while reducing charging times, making EVs more practical for everyday use.</p>
+                            
+                            <h3>Autonomous Driving Systems</h3>
+                            <p>Self-driving technology continues to advance with sophisticated sensor arrays, machine learning algorithms, and real-time data processing. Level 3 and Level 4 autonomous features are becoming more common in luxury vehicles, promising safer roads and reduced traffic congestion.</p>
+                            
+                            <blockquote class="blog-quote">
+                                <p>"The future of automotive technology lies in the seamless integration of artificial intelligence, sustainable energy, and human-centered design."</p>
+                                <cite>- Automotive Technology Expert</cite>
+                            </blockquote>
+                            
+                            <h3>Connected Car Technologies</h3>
+                            <p>Modern vehicles are becoming mobile computing platforms with 5G connectivity, over-the-air updates, and integrated IoT systems. These technologies enable real-time traffic optimization, predictive maintenance, and enhanced infotainment experiences.</p>
+                            
+                            <p>Advanced driver assistance systems (ADAS) are also evolving rapidly, incorporating features like adaptive cruise control, lane-keeping assistance, and automatic emergency braking. These systems are laying the groundwork for fully autonomous vehicles while improving safety in current models.</p>
+                            
+                            <h3>Sustainable Manufacturing</h3>
+                            <p>Automotive manufacturers are adopting sustainable practices throughout the production process, from using recycled materials to implementing carbon-neutral manufacturing facilities. This shift towards sustainability is driven by both regulatory requirements and consumer demand for environmentally responsible products.</p>
+                            
+                            <p>The integration of these technologies represents a fundamental shift in the automotive landscape, promising a future of safer, more efficient, and environmentally friendly transportation solutions.</p>
+                        </div>
+                        
+                        <div class="article-footer">
+                            <div class="article-tags">
+                                <span class="tag-label">Tags:</span>
+                                <a href="#" class="tag">Technology</a>
+                                <a href="#" class="tag">Electric Vehicles</a>
+                                <a href="#" class="tag">Autonomous Driving</a>
+                                <a href="#" class="tag">Innovation</a>
+                            </div>
+                            
+                            <div class="article-share">
+                                <span class="share-label">Share:</span>
+                                <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="share-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog section End -->
+
+    <!-- Footer Start -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="footer-section">
+                            <h5 class="footer-title">INFORMATION</h5>
+                            <ul class="footer-links">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Shop information</a></li>
+                                <li><a href="#">Delivery</a></li>
+                                <li><a href="#">Payment information and commissions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="footer-section">
+                            <h5 class="footer-title">CONTACT</h5>
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+49 123 456 7890</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>info@maycar.com</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>123 Automotive Street, Berlin, Germany</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="contact-btn">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="footer-section">
+                            <h5 class="footer-title">FOLLOW US</h5>
+                            <div class="footer-social-links">
+                                <a href="#" class="footer-social-link"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="footer-social-link">𝕏</a>
+                                <a href="#" class="footer-social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="footer-section">
+                            <div class="footer-logo">
+                                <img src="/images/beyaz-logo.png" alt="May Car Logo" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="payment-delivery-section">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="payment-methods">
+                            <h6>Our Payment Methods</h6>
+                            <div class="payment-icons">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg"
+                                    alt="Visa" class="payment-icon">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+                                    alt="Mastercard" class="payment-icon">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg"
+                                    alt="American Express" class="payment-icon">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="delivery-methods">
+                            <h6>Our Delivery Methods</h6>
+                            <div class="delivery-icons">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/DHL_Logo.svg" alt="DHL"
+                                    class="delivery-icon">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="copyright">&copy; 2024 May Car Automotive. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-bottom-links">
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <script src="js/script.js"></script>
+    <script src="js/header.js"></script>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
