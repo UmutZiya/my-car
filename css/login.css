@@ -1,6 +1,8 @@
-* {
-    margin: 0;
-    padding: 0;
+.auth-container *,
+.auth-card *,
+.tab-headers *,
+.tab-content *,
+.auth-form * {
     box-sizing: border-box;
 }
 
