@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>May Car Automotive</title>
+    <title>All News - May Car Automotive</title>
     <!-- Favicon -->
     <link rel="icon" href="/images/mycar-favicon.png" type="Favicon">
     <!-- Required meta tags -->
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/blog-single-page.css">
+    <link rel="stylesheet" href="/css/all-news.css">
 </head>
 
 <body>
@@ -137,51 +137,32 @@
     </div>
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-    <!-- Blog section Start -->
-    <section class="blog-hero">
+    <!-- News Hero Section Start -->
+    <section class="news-hero">
         <div class="container">
             <nav class="breadcrumb-nav">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="all-news.html">News</a></li>
-                    <li class="breadcrumb-item active"></li>
+                    <li class="breadcrumb-item active">News</li>
                 </ol>
             </nav>
-        </div>
-    </section>
-
-    <section class="blog-content">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <article class="blog-article">
-                        <div class="article-header">
-                            <h1 class="article-title"></h1>
-                            <div class="article-meta"></div>
-                        </div>
-                        
-                        <div class="article-image">
-                            <img src="" alt="" class="img-fluid">
-                        </div>
-                        
-                        <div class="article-content"></div>
-                        
-                        <div class="article-footer">
-                            <div class="article-tags"></div>
-                            
-                            <div class="article-share">
-                                <span class="share-label">Share:</span>
-                                <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="share-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+            <div class="hero-content">
+                <h1 class="hero-title">All News</h1>
+                <p class="hero-subtitle">Stay updated with the latest automotive news and insights</p>
             </div>
         </div>
     </section>
-    <!-- Blog section End -->
+    <!-- News Hero Section End -->
+
+    <!-- All News Section Start -->
+    <section class="all-news-section">
+        <div class="container">
+            <div class="news-grid" id="newsGrid">
+                <!-- News cards will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+    <!-- All News Section End -->
 
     <!-- Footer Start -->
     <footer class="footer">
@@ -245,12 +226,9 @@
                         <div class="payment-methods">
                             <h6>Our Payment Methods</h6>
                             <div class="payment-icons">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg"
-                                    alt="Visa" class="payment-icon">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
-                                    alt="Mastercard" class="payment-icon">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg"
-                                    alt="American Express" class="payment-icon">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" class="payment-icon">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" class="payment-icon">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg" alt="American Express" class="payment-icon">
                             </div>
                         </div>
                     </div>
@@ -258,8 +236,7 @@
                         <div class="delivery-methods">
                             <h6>Our Delivery Methods</h6>
                             <div class="delivery-icons">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/DHL_Logo.svg" alt="DHL"
-                                    class="delivery-icon">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/DHL_Logo.svg" alt="DHL" class="delivery-icon">
                             </div>
                         </div>
                     </div>
@@ -284,7 +261,7 @@
 
     <script src="js/script.js"></script>
     <script src="js/header.js"></script>
-    <script src="js/blog-single-page.js"></script>
+    <script src="js/all-news.js"></script>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

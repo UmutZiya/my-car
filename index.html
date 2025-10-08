@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/cart-dropdown.css">
 </head>
 
 <body>
@@ -75,18 +76,45 @@
                                     </form>
                                 </div>
                             </li>
-                            <li class="nav-item"><a href="#" class="nav-link">All Products</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">News</a></li>
+                            <li class="nav-item"><a href="all-products.html" class="nav-link">All Products</a></li>
+                            <li class="nav-item"><a href="all-news.html" class="nav-link">News</a></li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link login-link">
+                                <a href="login.html" class="nav-link login-link">
                                     <i class="fas fa-user me-1"></i>
                                     Log in</a>
                             </li>
                             <li class="nav-item cart-item">
-                                <a href="#" class="cart-link">
-                                    <i class="fas fa-shopping-cart"></i>
-                                    <span class="cart-total">0,00 €</span>
+                                <a href="javascript:void(0)" class="cart-link" onclick="toggleCart()">
+                                    <div class="cart-icon-wrapper">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        <span class="cart-badge" id="cartBadge">0</span>
+                                    </div>
+                                    <span class="cart-total" id="headerCartTotal">0,00 €</span>
                                 </a>
+                                <!-- Cart Dropdown -->
+                                <div class="cart-dropdown" id="cartDropdown">
+                                    <div class="cart-dropdown-header">
+                                        <h4>Shopping Cart</h4>
+                                        <span class="cart-count" id="cartItemCount">0 items</span>
+                                    </div>
+                                    <div class="cart-dropdown-body">
+                                        <div class="cart-items" id="cartItems">
+                                            <!-- Cart items will be loaded here -->
+                                        </div>
+                                    </div>
+                                    <div class="cart-dropdown-footer">
+                                        <div class="cart-total-section">
+                                            <div class="total-price">
+                                                <span>Total: </span>
+                                                <span id="cartTotalPrice">0.00 €</span>
+                                            </div>
+                                        </div>
+                                        <div class="cart-buttons">
+                                            <button class="btn-continue" onclick="closeCart()">Continue Shopping</button>
+                                            <button class="btn-checkout" onclick="goToCart()">Go to Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                     </nav>
@@ -312,6 +340,11 @@
             <div class="news-container" id="newsContainer">
                 <!-- News cards will be dynamically added here -->
             </div>
+            <div class="text-center mt-5">
+                <a href="all-news.html" class="btn-all-news">
+                    <i class="fas fa-newspaper"></i> View All News
+                </a>
+            </div>
         </div>
     </section>
     <!-- Haberler Section End -->
@@ -412,9 +445,10 @@
     </footer>
     <!-- Footer End -->
 
-    <script src="js/script.js"></script>
+    
     <script src="js/header.js"></script>
     <script src="js/product-filter.js"></script>
+    <script src="js/cart-functions.js"></script>
     <script src="js/new-product.js"></script>
     <script src="js/how-products-made.js"></script>
     <script src="js/most-sell-pr.js"></script>

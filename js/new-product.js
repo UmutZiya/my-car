@@ -204,8 +204,31 @@ class NewProductsSlider {
     addToCart(productId) {
         const product = this.products.find(p => p.id === productId);
         if (product) {
-            // Add to cart logic here
-            console.log(`Added to cart: ${product.title}`);
+            // Get existing cart from localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            // Check if product already exists in cart
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.title,
+                    price: product.price,
+                    image: product.image,
+                    quantity: 1
+                });
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // Update cart display if function exists
+            if (typeof updateCartDisplay === 'function') {
+                updateCartDisplay();
+            }
             
             // Show success message
             this.showNotification(`${product.title} added to cart!`, 'success');
@@ -214,41 +237,55 @@ class NewProductsSlider {
 
 
     showNotification(message, type = 'info') {
-        // Create notification element
         const notification = document.createElement('div');
         notification.className = `notification notification-${type}`;
         notification.innerHTML = `
             <div class="notification-content">
-                <i class="fas fa-${type === 'success' ? 'check-circle' : 'info-circle'}"></i>
+                <i class="fas fa-check-circle"></i>
                 <span>${message}</span>
             </div>
         `;
         
-        // Add styles
-        notification.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: ${type === 'success' ? '#28a745' : '#007bff'};
-            color: white;
-            padding: 15px 20px;
-            border-radius: 10px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            z-index: 1000;
-            transform: translateX(100%);
-            transition: transform 0.3s ease;
-        `;
+        // Add notification styles if not exists
+        if (!document.querySelector('#notification-styles')) {
+            const styles = document.createElement('style');
+            styles.id = 'notification-styles';
+            styles.textContent = `
+                .notification {
+                    position: fixed;
+                    bottom: 20px;
+                    right: 20px;
+                    background: white;
+                    border-radius: 10px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                    z-index: 10000;
+                    animation: slideInRight 0.3s ease;
+                }
+                .notification-success {
+                    border-left: 4px solid #28a745;
+                }
+                .notification-content {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 15px 20px;
+                }
+                .notification-success i {
+                    color: #28a745;
+                }
+                @keyframes slideInRight {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+            `;
+            document.head.appendChild(styles);
+        }
         
         document.body.appendChild(notification);
         
-        // Animate in
+        // Remove notification after 3 seconds
         setTimeout(() => {
-            notification.style.transform = 'translateX(0)';
-        }, 100);
-        
-        // Remove after 3 seconds
-        setTimeout(() => {
-            notification.style.transform = 'translateX(100%)';
+            notification.style.animation = 'slideInRight 0.3s ease reverse';
             setTimeout(() => {
                 if (notification.parentNode) {
                     notification.parentNode.removeChild(notification);

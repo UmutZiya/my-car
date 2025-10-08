@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Checkout - May Car Automotive</title>
+    <!-- Favicon -->
+    <link rel="icon" href="/images/mycar-favicon.png" type="Favicon">
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/payment.css">
+</head>
+
+<body>
+    <!-- Top Header Start -->
+    <div class="top-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link">𝕏</a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="language-switcher">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="languageDropdown"
+                                data-bs-toggle="dropdown">
+                                <img src="https://flagcdn.com/w20/gb.png" alt="EN" class="flag-icon"> EN
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#"><img src="https://flagcdn.com/w20/de.png" alt="DE"
+                                            class="flag-icon"> DE</a></li>
+                                <li><a class="dropdown-item" href="#"><img src="https://flagcdn.com/w20/tr.png" alt="TR"
+                                            class="flag-icon"> TR</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top Header End -->
+
+    <!-- Main Header Start -->
+    <header class="main-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-2 col-md-3 col-6">
+                    <div class="logo">
+                        <a href="index.html"><img src="/images/renkli-logo.png" alt="Logo" class="img-fluid"></a>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-md-9 col-6 d-none d-md-flex justify-content-end">
+                    <nav class="main-nav">
+                        <ul class="nav-menu">
+                            <li class="nav-item"><a href="all-products.html" class="nav-link">All Products</a></li>
+                            <li class="nav-item"><a href="all-news.html" class="nav-link">News</a></li>
+                            <li class="nav-item">
+                                <a href="login.html" class="nav-link login-link">
+                                    <i class="fas fa-user me-1"></i>
+                                    Log in</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Header End -->
+
+    <!-- Checkout Section Start -->
+    <section class="checkout-section">
+        <div class="container">
+            <!-- Progress Steps -->
+            <div class="checkout-progress">
+                <div class="progress-step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Cart Review</div>
+                </div>
+                <div class="progress-step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Billing & Shipping</div>
+                </div>
+                <div class="progress-step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Payment</div>
+                </div>
+            </div>
+
+            <div class="checkout-content">
+                <!-- Step 1: Cart Review -->
+                <div class="checkout-step" id="step1">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="cart-items-section">
+                                <h3>Your Cart Items</h3>
+                                <div class="cart-items-list" id="cartItemsList">
+                                    <!-- Cart items will be loaded here -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="order-summary">
+                                <h4>Order Summary</h4>
+                                <div class="summary-item">
+                                    <span>Subtotal:</span>
+                                    <span id="subtotal">0.00 €</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Shipping:</span>
+                                    <span>Free</span>
+                                </div>
+                                <div class="summary-item total">
+                                    <span>Total:</span>
+                                    <span id="total">0.00 €</span>
+                                </div>
+                                <button class="btn-next" onclick="nextStep()">Next Step</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Billing & Shipping -->
+                <div class="checkout-step" id="step2" style="display: none;">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="billing-section">
+                                <h3>Billing & Shipping Information</h3>
+                                <form id="billingForm">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>First Name *</label>
+                                                <input type="text" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Last Name *</label>
+                                                <input type="text" class="form-control" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email Address *</label>
+                                        <input type="email" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Phone Number *</label>
+                                        <input type="tel" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Address *</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>City *</label>
+                                                <input type="text" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Postal Code *</label>
+                                                <input type="text" class="form-control" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Country *</label>
+                                        <select class="form-control" required>
+                                            <option value="">Select Country</option>
+                                            <option value="DE">Germany</option>
+                                            <option value="AT">Austria</option>
+                                            <option value="CH">Switzerland</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="order-summary">
+                                <h4>Order Summary</h4>
+                                <div class="summary-item">
+                                    <span>Subtotal:</span>
+                                    <span id="subtotal2">0.00 €</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Shipping:</span>
+                                    <span>Free</span>
+                                </div>
+                                <div class="summary-item total">
+                                    <span>Total:</span>
+                                    <span id="total2">0.00 €</span>
+                                </div>
+                                <button class="btn-back" onclick="prevStep()">Back</button>
+                                <button class="btn-next" onclick="nextStep()">Next Step</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Payment -->
+                <div class="checkout-step" id="step3" style="display: none;">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="payment-section">
+                                <h3>Payment Information</h3>
+                                <div class="payment-methods">
+                                    <div class="payment-method">
+                                        <input type="radio" id="creditCard" name="paymentMethod" value="creditCard" checked>
+                                        <label for="creditCard">
+                                            <i class="fas fa-credit-card"></i>
+                                            Credit Card
+                                        </label>
+                                    </div>
+                                    <div class="payment-method">
+                                        <input type="radio" id="paypal" name="paymentMethod" value="paypal">
+                                        <label for="paypal">
+                                            <i class="fab fa-paypal"></i>
+                                            PayPal
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="credit-card-form" id="creditCardForm">
+                                    <div class="form-group">
+                                        <label>Card Number *</label>
+                                        <input type="text" class="form-control" placeholder="1234 5678 9012 3456" required>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Expiry Date *</label>
+                                                <input type="text" class="form-control" placeholder="MM/YY" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>CVV *</label>
+                                                <input type="text" class="form-control" placeholder="123" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Cardholder Name *</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="order-summary">
+                                <h4>Final Order Summary</h4>
+                                <div class="summary-item">
+                                    <span>Subtotal:</span>
+                                    <span id="subtotal3">0.00 €</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Shipping:</span>
+                                    <span>Free</span>
+                                </div>
+                                <div class="summary-item total">
+                                    <span>Total:</span>
+                                    <span id="total3">0.00 €</span>
+                                </div>
+                                <button class="btn-back" onclick="prevStep()">Back</button>
+                                <button class="btn-complete" onclick="completeOrder()">Complete Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Checkout Section End -->
+
+    <!-- Footer Start -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="footer-section">
+                            <h5 class="footer-title">INFORMATION</h5>
+                            <ul class="footer-links">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Shop information</a></li>
+                                <li><a href="#">Delivery</a></li>
+                                <li><a href="#">Payment information and commissions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="footer-section">
+                            <h5 class="footer-title">CONTACT</h5>
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+49 123 456 7890</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>info@maycar.com</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>123 Automotive Street, Berlin, Germany</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="contact-btn">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="footer-section">
+                            <h5 class="footer-title">FOLLOW US</h5>
+                            <div class="footer-social-links">
+                                <a href="#" class="footer-social-link"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="footer-social-link">𝕏</a>
+                                <a href="#" class="footer-social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="footer-section">
+                            <div class="footer-logo">
+                                <img src="/images/beyaz-logo.png" alt="May Car Logo" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <script src="js/script.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/payment.js"></script>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

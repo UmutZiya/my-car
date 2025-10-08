@@ -280,8 +280,31 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addToCart = function(productId) {
         const product = mostSellingProducts.find(p => p.id === productId);
         if (product) {
-            // Add to cart logic here
-            console.log(`Added ${product.title} to cart`);
+            // Get existing cart from localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            // Check if product already exists in cart
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.title,
+                    price: parseFloat(product.price),
+                    image: product.image,
+                    quantity: 1
+                });
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // Update cart display if function exists
+            if (typeof updateCartDisplay === 'function') {
+                updateCartDisplay();
+            }
             
             // Show success message
             showNotification(`${product.title} added to cart!`, 'success');
@@ -306,7 +329,7 @@ document.addEventListener('DOMContentLoaded', function() {
             styles.textContent = `
                 .notification {
                     position: fixed;
-                    top: 20px;
+                    bottom: 20px;
                     right: 20px;
                     background: white;
                     border-radius: 10px;

@@ -87,7 +87,6 @@
     outline: none;
     border-color: #007bff;
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
-    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23007bff" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
 }
 
 .filter-select:disabled {
@@ -1281,4 +1280,28 @@
         font-size: 13px;
     }
 }
+.btn-all-news {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-all-news:hover {
+    background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
 /* News Section Styles End */

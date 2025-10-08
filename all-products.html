@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/blog-single-page.css">
+    <link rel="stylesheet" href="/css/all-products.css">
+    <link rel="stylesheet" href="/css/cart-dropdown.css">
 </head>
 
 <body>
@@ -84,10 +85,37 @@
                                     Log in</a>
                             </li>
                             <li class="nav-item cart-item">
-                                <a href="#" class="cart-link">
-                                    <i class="fas fa-shopping-cart"></i>
-                                    <span class="cart-total">0,00 €</span>
+                                <a href="javascript:void(0)" class="cart-link" onclick="toggleCart()">
+                                    <div class="cart-icon-wrapper">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        <span class="cart-badge" id="cartBadge">0</span>
+                                    </div>
+                                    <span class="cart-total" id="headerCartTotal">0,00 €</span>
                                 </a>
+                                <!-- Cart Dropdown -->
+                                <div class="cart-dropdown" id="cartDropdown">
+                                    <div class="cart-dropdown-header">
+                                        <h4>Shopping Cart</h4>
+                                        <span class="cart-count" id="cartItemCount">0 items</span>
+                                    </div>
+                                    <div class="cart-dropdown-body">
+                                        <div class="cart-items" id="cartItems">
+                                            <!-- Cart items will be loaded here -->
+                                        </div>
+                                    </div>
+                                    <div class="cart-dropdown-footer">
+                                        <div class="cart-total-section">
+                                            <div class="total-price">
+                                                <span>Total: </span>
+                                                <span id="cartTotalPrice">0.00 €</span>
+                                            </div>
+                                        </div>
+                                        <div class="cart-buttons">
+                                            <button class="btn-continue" onclick="closeCart()">Continue Shopping</button>
+                                            <button class="btn-checkout" onclick="goToCart()">Go to Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                     </nav>
@@ -137,51 +165,98 @@
     </div>
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-    <!-- Blog section Start -->
-    <section class="blog-hero">
+    <!-- Page Header Start -->
+    <section class="page-header">
         <div class="container">
-            <nav class="breadcrumb-nav">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="all-news.html">News</a></li>
-                    <li class="breadcrumb-item active"></li>
-                </ol>
-            </nav>
-        </div>
-    </section>
-
-    <section class="blog-content">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <article class="blog-article">
-                        <div class="article-header">
-                            <h1 class="article-title"></h1>
-                            <div class="article-meta"></div>
-                        </div>
-                        
-                        <div class="article-image">
-                            <img src="" alt="" class="img-fluid">
-                        </div>
-                        
-                        <div class="article-content"></div>
-                        
-                        <div class="article-footer">
-                            <div class="article-tags"></div>
-                            
-                            <div class="article-share">
-                                <span class="share-label">Share:</span>
-                                <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="share-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </article>
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="page-title">All Products</h1>
+                    <p class="page-subtitle">Discover our complete range of automotive products</p>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Blog section End -->
+    <!-- Page Header End -->
+
+    <!-- Product Filter Start -->
+    <section class="product-filter">
+        <div class="container">
+            <div class="filter-container">
+                <div class="filter-row">
+                    <div class="filter-item">
+                        <select id="brandSelect" class="filter-select">
+                            <option value="">Select Brand</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <select id="modelSelect" class="filter-select" disabled>
+                            <option value="">Select Model</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <select id="versionSelect" class="filter-select" disabled>
+                            <option value="">Select Version</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <select id="generationSelect" class="filter-select" disabled>
+                            <option value="">Select Generation</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <select id="typeSelect" class="filter-select" disabled>
+                            <option value="">Select Type</option>
+                        </select>
+                    </div>
+                    <div class="filter-actions">
+                        <button type="button" class="btn-clear" id="clearFilter">
+                            <i class="fas fa-times"></i> Clear
+                        </button>
+                        <button type="button" class="btn-search" id="searchFilter">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Filter End -->
+
+    <!-- Products Grid Start -->
+    <section class="products-grid">
+        <div class="container">
+            <div class="products-header">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="products-count">
+                            <span id="productsCount">0 products found</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="sort-options">
+                            <select id="sortSelect" class="sort-select">
+                                <option value="name">Sort by Name</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="newest">Newest First</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="products-container" id="productsContainer">
+                <!-- Products will be dynamically added here -->
+            </div>
+            <div class="no-products" id="noProducts" style="display: none;">
+                <div class="no-products-content">
+                    <i class="fas fa-search"></i>
+                    <h3>No products found</h3>
+                    <p>No products match your current filter criteria. Please try adjusting your filters.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Products Grid End -->
 
     <!-- Footer Start -->
     <footer class="footer">
@@ -245,12 +320,9 @@
                         <div class="payment-methods">
                             <h6>Our Payment Methods</h6>
                             <div class="payment-icons">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg"
-                                    alt="Visa" class="payment-icon">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
-                                    alt="Mastercard" class="payment-icon">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg"
-                                    alt="American Express" class="payment-icon">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" class="payment-icon">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" class="payment-icon">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg" alt="American Express" class="payment-icon">
                             </div>
                         </div>
                     </div>
@@ -258,8 +330,7 @@
                         <div class="delivery-methods">
                             <h6>Our Delivery Methods</h6>
                             <div class="delivery-icons">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/DHL_Logo.svg" alt="DHL"
-                                    class="delivery-icon">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/DHL_Logo.svg" alt="DHL" class="delivery-icon">
                             </div>
                         </div>
                     </div>
@@ -284,7 +355,8 @@
 
     <script src="js/script.js"></script>
     <script src="js/header.js"></script>
-    <script src="js/blog-single-page.js"></script>
+    <script src="js/cart-functions.js"></script>
+    <script src="js/all-products.js"></script>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

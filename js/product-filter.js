@@ -200,16 +200,11 @@ function performSearch() {
         Object.entries(filters).filter(([key, value]) => value !== '')
     );
     
-    if (Object.keys(activeFilters).length === 0) {
-        alert('Please select at least one filter option');
-        return;
-    }
-    
     // Create search parameters
     const searchParams = new URLSearchParams(activeFilters);
     
-    // Redirect to search results page
-    const searchUrl = `/search-results.html?${searchParams.toString()}`;
+    // Redirect to all-products page with filters
+    const searchUrl = `all-products.html?${searchParams.toString()}`;
     window.location.href = searchUrl;
 }
 

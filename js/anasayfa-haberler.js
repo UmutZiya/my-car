@@ -5,21 +5,21 @@ const newsData = [
         image: "/images/car-being-taking-care-workshop.jpg",
         title: "Latest Automotive Technology Trends",
         subtitle: "Discover the cutting-edge technologies that are revolutionizing the automotive industry. From electric vehicles to autonomous driving systems.",
-        link: "blog-single-page.html"
+        link: "blog-single-page.html?id=1"
     },
     {
         id: 2,
         image: "/images/car-detailing-concept-man-face-mask-with-orbital-polisher-repair-shop-polishing-roof-orange-suv-car.jpg",
         title: "Professional Car Detailing Tips",
         subtitle: "Learn professional car detailing techniques to keep your vehicle looking pristine. Expert tips and tricks from industry professionals.",
-        link: "blog-single-page.html"
+        link: "blog-single-page.html?id=2"
     },
     {
         id: 3,
         image: "/images/full-shot-man-wrapping-car.jpg",
         title: "Car Wrapping: Complete Guide",
         subtitle: "Everything you need to know about car wrapping. From choosing the right materials to professional installation techniques.",
-        link: "blog-single-page.html"
+        link: "blog-single-page.html?id=3"
     }
 ];
 

@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/blog-single-page.css">
+    <link rel="stylesheet" href="/css/product-single-page.css">
+    <link rel="stylesheet" href="/css/cart-dropdown.css">
 </head>
 
 <body>
@@ -84,10 +85,37 @@
                                     Log in</a>
                             </li>
                             <li class="nav-item cart-item">
-                                <a href="#" class="cart-link">
-                                    <i class="fas fa-shopping-cart"></i>
-                                    <span class="cart-total">0,00 €</span>
+                                <a href="#" class="cart-link" onclick="toggleCart()">
+                                    <div class="cart-icon-wrapper">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        <span class="cart-badge" id="cartBadge">0</span>
+                                    </div>
+                                    <span class="cart-total" id="headerCartTotal">0,00 €</span>
                                 </a>
+                                <!-- Cart Dropdown -->
+                                <div class="cart-dropdown" id="cartDropdown">
+                                    <div class="cart-dropdown-header">
+                                        <h4>Shopping Cart</h4>
+                                        <span class="cart-count" id="cartItemCount">0 items</span>
+                                    </div>
+                                    <div class="cart-dropdown-body">
+                                        <div class="cart-items" id="cartItems">
+                                            <!-- Cart items will be loaded here -->
+                                        </div>
+                                    </div>
+                                    <div class="cart-dropdown-footer">
+                                        <div class="cart-total-section">
+                                            <div class="total-price">
+                                                <span>Total: </span>
+                                                <span id="cartTotalPrice">0.00 €</span>
+                                            </div>
+                                        </div>
+                                        <div class="cart-buttons">
+                                            <button class="btn-continue" onclick="closeCart()">Continue Shopping</button>
+                                            <button class="btn-checkout" onclick="goToCart()">Go to Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                     </nav>
@@ -137,51 +165,148 @@
     </div>
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-    <!-- Blog section Start -->
-    <section class="blog-hero">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb-nav">
         <div class="container">
-            <nav class="breadcrumb-nav">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="all-news.html">News</a></li>
-                    <li class="breadcrumb-item active"></li>
-                </ol>
-            </nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home page</a></li>
+                <li class="breadcrumb-item"><a href="#">Our Offer</a></li>
+                <li class="breadcrumb-item"><a href="#">Audi</a></li>
+                <li class="breadcrumb-item"><a href="#">A3 / S3 / RS3</a></li>
+                <li class="breadcrumb-item"><a href="#">RS3</a></li>
+                <li class="breadcrumb-item"><a href="#">8Y Facelift [2024-]</a></li>
+                <li class="breadcrumb-item"><a href="#">Sportback</a></li>
+                <li class="breadcrumb-item active">Rear Splitter (with vertical bars) V.3 Audi RS3 Sportback 8Y Facelift</li>
+            </ol>
         </div>
-    </section>
+    </nav>
 
-    <section class="blog-content">
+    <!-- Product Section Start -->
+    <section class="product-detail-section">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <article class="blog-article">
-                        <div class="article-header">
-                            <h1 class="article-title"></h1>
-                            <div class="article-meta"></div>
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="product-gallery">
+                        <div class="main-image-container">
+                            <button class="nav-btn prev-btn" onclick="previousImage()">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <div class="main-image">
+                                <img src="/images/product-1.jpg" alt="Product" id="mainProductImage">
+                            </div>
+                            <button class="nav-btn next-btn" onclick="nextImage()">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="thumbnail-gallery">
+                            <button class="thumb-nav prev-thumb" onclick="scrollThumbnails('left')">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <div class="thumbnail-container">
+                                <img src="/images/product-1.jpg" alt="Product" class="thumbnail active" onclick="changeMainImage(this, 0)">
+                                <img src="/images/product-2.jpg" alt="Product" class="thumbnail" onclick="changeMainImage(this, 1)">
+                                <img src="/images/product-3.jpg" alt="Product" class="thumbnail" onclick="changeMainImage(this, 2)">
+                                <img src="/images/product-4.jpg" alt="Product" class="thumbnail" onclick="changeMainImage(this, 3)">
+                                <img src="/images/product-5.jpg" alt="Product" class="thumbnail" onclick="changeMainImage(this, 4)">
+                            </div>
+                            <button class="thumb-nav next-thumb" onclick="scrollThumbnails('right')">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="product-info">
+                        <div class="product-badge">
+                            <span class="new-badge">NEW IN</span>
+                        </div>
+                        <h1 class="product-title">Rear Splitter (with vertical bars) V.3 Audi RS3 Sportback 8Y Facelift</h1>
+                        <div class="product-code">
+                            Product code <strong>AU-RS3-8YF-SB-RD3G+RD4G</strong>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-amount">249,00 €</span>
+                            <span class="price-unit">/ pcs.</span>
+                        </div>
+                        <div class="net-price">
+                            net price 202,44 €
                         </div>
                         
-                        <div class="article-image">
-                            <img src="" alt="" class="img-fluid">
-                        </div>
-                        
-                        <div class="article-content"></div>
-                        
-                        <div class="article-footer">
-                            <div class="article-tags"></div>
-                            
-                            <div class="article-share">
-                                <span class="share-label">Share:</span>
-                                <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="share-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        <div class="quantity-section">
+                            <div class="quantity-row">
+                                <div class="quantity-controls">
+                                    <button type="button" class="quantity-btn" onclick="decreaseQuantity()">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <input type="number" id="quantity" value="1" min="1" readonly>
+                                    <button type="button" class="quantity-btn" onclick="increaseQuantity()">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                                <button class="wishlist-btn" onclick="addToWishlist()">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                            <div class="animated-cart-container" onclick="addToCart()">
+                                <div class="left-side">
+                                    <div class="card">
+                                        <div class="card-line"></div>
+                                        <div class="buttons"></div>
+                                    </div>
+                                    <div class="post">
+                                        <div class="post-line"></div>
+                                        <div class="screen">
+                                            <div class="dollar">€</div>
+                                        </div>
+                                        <div class="numbers"></div>
+                                        <div class="numbers-line2"></div>
+                                    </div>
+                                </div>
+                                <div class="right-side">
+                                    <div class="new">Add to cart</div>
+                                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 451.846 451.847">
+                                        <path d="M345.441 248.292L151.154 442.573c-12.359 12.365-32.397 12.365-44.75 0-12.354-12.354-12.354-32.391 0-44.744L278.318 225.92 106.409 54.017c-12.354-12.359-12.354-32.394 0-44.748 12.354-12.359 32.391-12.359 44.75 0l194.287 194.284c6.177 6.18 9.262 14.271 9.262 22.366 0 8.099-3.091 16.196-9.267 22.373z" class="active-path" fill="#a1a1ff"></path>
+                                    </svg>
+                                </div>
                             </div>
                         </div>
-                    </article>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Description -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="product-details">
+                        <!-- Product description will be loaded by JavaScript -->
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Blog section End -->
+    
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Shopping Cart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cartItems"></div>
+                    <div class="cart-total">
+                        <h4>Total: <span id="cartTotalPrice">0.00</span> €</h4>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+                    <button type="button" class="btn btn-primary">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Product Section End -->
 
     <!-- Footer Start -->
     <footer class="footer">
@@ -284,7 +409,9 @@
 
     <script src="js/script.js"></script>
     <script src="js/header.js"></script>
-    <script src="js/blog-single-page.js"></script>
+    <script src="js/cart-functions.js"></script>
+    <script src="js/add-product.js"></script>
+    <script src="js/product-single.js"></script>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
