@@ -257,7 +257,7 @@ body {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #dc3545ad 100%);
     border-radius: 2px;
 }
 
@@ -548,7 +548,7 @@ body {
     transform: translateX(-50%);
     width: 100px;
     height: 4px;
-    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #dc3545ad 100%);
     border-radius: 2px;
 }
 
@@ -848,7 +848,7 @@ body {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #dc3545ad 100%);
     border-radius: 2px;
 }
 
@@ -1138,7 +1138,7 @@ body {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #dc3545ad 100%);
     border-radius: 2px;
 }
 
@@ -1236,7 +1236,7 @@ body {
 }
 
 .read-more-btn {
-    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #dc3545ad 100%);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -1252,9 +1252,8 @@ body {
 }
 
 .read-more-btn:hover {
-    background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #dc3545ad 100%);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
     color: white;
     text-decoration: none;
 }
@@ -1334,7 +1333,7 @@ body {
 }
 
 .btn-all-news {
-    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #dc3545ad 100%);
     color: white;
     border: none;
     padding: 15px 35px;
@@ -1350,9 +1349,8 @@ body {
 }
 
 .btn-all-news:hover {
-    background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #dc3545ad 100%);
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.4);
     color: white;
     text-decoration: none;
 }
